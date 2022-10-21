@@ -32,6 +32,10 @@ class Weather
             throw new \Exception("Error Processing Request", 400);
         }
         
-        return $response->json();
+        $weatherRes = $response->json();
+        
+        $weatherRes['name'] = $obj->name;
+
+        return $weatherRes;
     }
 }
