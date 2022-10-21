@@ -2,7 +2,9 @@ import React from "react";
 
 const WeatherCard = (props) => {
     const store = localStorage.getItem("data");
+
     const { name, current } = JSON.parse(store);
+
     const time = (unixTime) =>
         new Date(unixTime * 1000).toLocaleTimeString("en-US");
 
